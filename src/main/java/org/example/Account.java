@@ -20,11 +20,20 @@ public class Account {
     }
     public void Deposit(double amount){
         if(amount > 0){
-            balance+= balance + amount;
+            balance+= amount;
             transactions.add("Deposited : $"+ amount);
         }
         else{
             System.out.println(" Invalid deposit amount ");
+        }
+    }
+    public void Withdraw(double amount){
+        if(amount > 0 && balance >= amount){
+            balance-= amount;
+            transactions.add("withdrawn : $"+ amount);
+        }
+        else{
+            System.out.println("Invalid amount or Insufficient balance");
         }
     }
 
