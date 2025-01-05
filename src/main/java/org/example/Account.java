@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Account {
     private double balance;
-    private List<String> transactions;
+    private final List<String> transactions;
     public Account(){
         this.balance = 0.0;
         this.transactions = new ArrayList<>();
@@ -18,7 +18,15 @@ public class Account {
     public List<String> getTransactions() {
         return transactions;
     }
-
+    public void Deposit(double amount){
+        if(amount > 0){
+            balance+= balance + amount;
+            transactions.add("Deposited : $"+ amount);
+        }
+        else{
+            System.out.println(" Invalid deposit amount ");
+        }
+    }
 
 
 }
