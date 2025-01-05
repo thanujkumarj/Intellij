@@ -18,7 +18,7 @@ public class Account {
     public List<String> getTransactions() {
         return transactions;
     }
-    public void Deposit(double amount){
+    public void deposit(double amount){
         if(amount > 0){
             balance+= amount;
             transactions.add("Deposited : $"+ amount);
@@ -27,7 +27,7 @@ public class Account {
             System.out.println(" Invalid deposit amount ");
         }
     }
-    public void Withdraw(double amount){
+    public void withdraw(double amount){
         if(amount > 0 && balance >= amount){
             balance-= amount;
             transactions.add("withdrawn : $"+ amount);
@@ -36,6 +36,5 @@ public class Account {
             System.out.println("Invalid amount or Insufficient balance");
         }
     }
-
 
 }
